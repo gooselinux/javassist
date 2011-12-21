@@ -1,0 +1,23 @@
+--- build.xml.old	2008-10-09 19:51:16.000000000 +0200
++++ build.xml	2008-12-09 16:27:29.000000000 +0100
+@@ -155,17 +155,19 @@
+ to ${build.classes.dir}.</echo>
+   </target>
+ 
+-  <target name="jar" depends="compile14">
++  <target name="jar" depends="compile">
+     <jar jarfile="${target.jar}" manifest="${src.dir}/META-INF/MANIFEST.MF">
+       <fileset dir="${build.classes.dir}">
+       	  <include name="**/*.class"/>
+       </fileset>
+      </jar>
++    <!--
+     <jar jarfile="${target-src.jar}" manifest="${src.dir}/META-INF/MANIFEST.MF">
+       <fileset dir="${src.dir}">
+         <include name="javassist/**"/>
+       </fileset>
+     </jar>
++    -->
+   </target>
+ 
+   <target name="javadocs">
